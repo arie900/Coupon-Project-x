@@ -70,7 +70,8 @@ public class CreateCouponTable {
 				System.out.println("success: " + customer_coupon);
 				
 	} catch (SQLException e) {
-		e.printStackTrace();
+		String m = "server not connected";
+		throw new CouponSystemException(m);
 	}
 				// disconnect
 				System.out.println("disconnected");
