@@ -55,8 +55,8 @@ public class CreateCouponTable {
 				pstmt3.executeUpdate();
 				System.out.println("success: " + customertable);
 				
-				String company_coupon = "CREATE TABLE Company_Coupon(COMP_ID BIGINT PRIMARY KEY, COUPON_ID BIGINT, FOREIGN KEY(COUPON_ID) REFERENCES Coupon(ID))";
-				String customer_coupon = "CREATE TABLE Customer_Coupon(CUST_ID BIGINT PRIMARY KEY, COUPON_ID BIGINT,FOREIGN KEY(COUPON_ID) REFERENCES Coupon(ID))";
+				String company_coupon = "CREATE TABLE Company_Coupon(COMP_ID BIGINT PRIMARY KEY, COUPON_ID BIGINT, FOREIGN KEY(COUPON_ID) REFERENCES Coupon(ID), FOREIGN KEY(COMP_ID) REFERENCES Company(ID))";
+				String customer_coupon = "CREATE TABLE Customer_Coupon(CUST_ID BIGINT PRIMARY KEY, COUPON_ID BIGINT,FOREIGN KEY(COUPON_ID) REFERENCES Coupon(ID), FOREIGN KEY(CUST_ID) REFERENCES Customer(ID))";
 				
 				PreparedStatement pstmt4 = con.prepareStatement(company_coupon);
 				pstmt4.executeUpdate();
