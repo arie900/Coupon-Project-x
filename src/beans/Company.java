@@ -11,8 +11,9 @@ public class Company {
 	private List<Coupon>coupons=new ArrayList<>();
 	
 	public Company(){
-		super();
+		
 	}
+	
 
 	public long getId() {
 		return id;

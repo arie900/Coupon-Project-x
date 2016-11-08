@@ -6,16 +6,19 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Enumeration;
+
+import couponSystemException.CouponSystemException;
 public class CreateCouponTable {
 
-		public static void main(String[] args) {
+		public static void main(String[] args) throws CouponSystemException {
 		String driverClassName = "org.apache.derby.jdbc.ClientDriver";
 		try {
 			// load driver class to memory
 			Class.forName(driverClassName);
 
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			String m = "driver was not found";
+			throw new CouponSystemException(m);
 		}
 
 		// get an enumeration (collection) of all loaded drivers

@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import beans.Company;
+
 public class Test {
 	public static void main(String[] args) {
 		String url="jdbc:derby://localhost:1527/CouponDB;create=true";
@@ -20,6 +22,7 @@ public class Test {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 
 }
