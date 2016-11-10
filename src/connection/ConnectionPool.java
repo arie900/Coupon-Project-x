@@ -24,7 +24,7 @@ public class ConnectionPool {
 		System.out.println(connections);
 	}
 
-	public synchronized Iterator<Connection> getConnections() {
+	public synchronized Connection getConnections() {
 		while (connections.isEmpty()) {
 			try {
 				wait();
@@ -33,11 +33,11 @@ public class ConnectionPool {
 			}
 		}
 		Iterator<Connection> iter = connections.iterator();
-		iter.next();
+		Connection con = iter.next();
 		iter.remove();
 		System.out.println(connections);
 
-		return iter;
+		return con;
 
 	}
 
